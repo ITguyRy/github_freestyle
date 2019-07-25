@@ -5,7 +5,9 @@
 import time
 import os, sys
 
+def spacing():
 
+     print('                                                           ', end='\r', flush=True)
 def counter():
     count = 0
     dots = ['.', '..','...','....']
@@ -19,14 +21,14 @@ def counter():
         #we only want to grab uptil index 3 so we will reset at 4 here
         if dots_count == 4:
             dots_count = -1
-        
-            print('                                                           ', end='\r', flush=True)
+            spacing() 
         else:
            # print("{}% complete. loading{}".format(count, dots[dots_count]))
             print("{}% complete. loading{}".format(count, dots[dots_count]), end='\r')
 def main():
     counter()
-    print('100% complete. loading.')
+    print('100% complete. loading.', end ='\r')
+    spacing()
     print('loading complete.')
 if __name__ == '__main__':
     main()
